@@ -38,7 +38,7 @@ class Persona():
             self.__sexo = 'M'
 
     def toString(self):
-        return "Nombre: " +self.__nombre+"|| Edad: " +str(self.__edad)+"|| Sexo: " +self.__sexo+"|| Peso: "+str(self.__peso)+"|| Altura: "+str(self.__altura) + "|| DNI:"+self.__DNI
+        return "Nombre: " +self.__nombre+" || Edad: " +str(self.__edad)+" || Sexo: " +self.__sexo+" || Peso: "+str(self.__peso)+" || Altura: "+str(self.__altura) + " || DNI:"+self.__DNI
 
 
     def set_nombre(self, nombre):
@@ -60,7 +60,7 @@ class Persona():
         return self.__nombre
 
     def crearDNI(self):
-        array = np.array(["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L","C","K","E"])
+        array = np.array(["T", "R", "W", "A", "G", "M", "Y", "F", "P", "D", "X", "B", "N", "J", "Z", "S", "Q", "V", "H", "L", "C", "K", "E"])
         n = randint(0000000, 99999999)
         resto = n % 23
         letra = array[resto]
@@ -70,45 +70,45 @@ class Persona():
 
 nombre = ""
 while(nombre == ""):
-    nombre = (input("Cual es el nombre?"))
+    nombre = (input("Nombre: "))
     if(nombre != ""):
         break
 
-edad = (input("Cual es la edad?"))
+edad = (input("Edad: "))
 while(edad == ""):
-    edad = (input("Cual es la edad?"))
+    edad = (input("Edad: "))
     if(edad != ""):
         int(edad)
         break
 
 sexo = ''
 while(sexo == ""):
-    sexo = input("Cual es el sexo?")
+    sexo = input("Sexo: ")
     if(nombre != ""):
         break
 
-peso = (input("Cual es el peso"))
+peso = (input("Peso: "))
 while(peso == ""):
-    peso = (input("Cual es el peso"))
+    peso = (input("Peso: "))
     if(peso != ""):
         break
 
-altura = (input("Cual es la altura"))
+altura = (input("Altura: "))
 while(altura == ""):
-    altura = (input("Cual es la altura"))
+    altura = (input("Altura: "))
     if(altura != ""):
         break
 
 
 persona = Persona(nombre, edad, sexo , peso, altura)
-persona2 = Persona(nombre, edad, sexo , 80, 1.6)
+persona2 = Persona(nombre, edad, sexo , 100, 2)
 persona3 = Persona()
 
-persona3.set_nombre("Jose")
-persona3.set_edad(19)
+persona3.set_nombre("Nosferatu")
+persona3.set_edad(999)
 persona3.set_sexo("H")
-persona3.set_peso(65)
-persona3.set_altura(1.70)
+persona3.set_peso(50)
+persona3.set_altura(2)
 
 persona.introducirSexo(sexo)
 persona2.introducirSexo(sexo)
@@ -118,20 +118,19 @@ persona.crearDNI()
 persona2.crearDNI()
 persona3.crearDNI()
 
-print("---------PESOS------------")
 if(persona.calcularIMC() == -1):
-    print(persona.get_Nombre() + " Esta muy delgado")
+    print(persona.get_Nombre() + " Estas muy delgado")
 if(persona.calcularIMC() == 0):
-    print(persona.get_Nombre() + " Esta en su peso ideal")
+    print(persona.get_Nombre() + " Estas en tu peso ideal")
 if(persona.calcularIMC() == 1):
-    print(persona.get_Nombre() + " Esta con sobrepeso")
+    print(persona.get_Nombre() + " Estas con sobrepeso")
 
 if(persona2.calcularIMC() == -1):
-    print(persona2.get_Nombre() + " Esta muy delgado")
+    print(persona2.get_Nombre() + " Estas muy delgado")
 if(persona2.calcularIMC() == 0):
-    print(persona2.get_Nombre() + " Esta en su peso ideal")
+    print(persona2.get_Nombre() + " Estas en tu peso ideal")
 if(persona2.calcularIMC() == 1):
-    print(persona2.get_Nombre() + " Esta con sobrepeso")
+    print(persona2.get_Nombre() + " Estas con sobrepeso")
 
 if(persona3.calcularIMC() == -1):
     print(persona3.get_Nombre() + " Esta muy delgado")
@@ -156,7 +155,7 @@ if(persona3.esMayorEdad()):
 else:
     print(persona3.get_Nombre() + " No es mayor de edad")
 
-print("--------DATOS--------")
+
 print(persona.toString())
 print(persona2.toString())
 print(persona3.toString())

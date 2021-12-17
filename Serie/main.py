@@ -1,9 +1,9 @@
 class Series():
     _entregado = False
 
-    def __init__(self, titulo = "", numTemp = 3, genero = "", creador = ""):
+    def __init__(self, titulo = "", numeroTemporada = 3, genero ="", creador =""):
         self._titulo = titulo
-        self._numTemp = numTemp
+        self._numeroTemporada = numeroTemporada
         self._genero = genero
         self._creador = creador
 
@@ -11,7 +11,7 @@ class Series():
         return self._titulo
 
     def get_numTemp(self):
-        return self._numTemp
+        return self._numeroTemporada
 
     def get_genero(self):
         return self._genero
@@ -26,7 +26,7 @@ class Series():
         self._titulo = titulo
 
     def set_numTemp(self, numTemp):
-        self._numTemp = numTemp
+        self._numeroTemporada = numTemp
 
     def set_genero(self, genero):
         self._genero = genero
@@ -36,7 +36,7 @@ class Series():
 
 
     def toString(self):
-        return "Titulo :" +self._titulo + " Numero Temporada : "+ str(self._numTemp) + " Genero : " +self._genero + " Creador : " +self._creador
+        return "Titulo:" + self._titulo + ", Numero de temporada: " + str(self._numeroTemporada) + ", Genero: " + self._genero + ", Creador: " + self._creador
 
     def entregados(self):
         self._entregado = True
@@ -44,7 +44,7 @@ class Series():
 class Videojuegos():
     _entregado = False
 
-    def __init__(self, titulo ="", horasEstimadas = 10, genero = "", compañia = ""):
+    def __init__(self, titulo ="", horasEstimadas = 0, genero = "", compañia = ""):
         self._titulo = titulo
         self._horasEstimadas = horasEstimadas
         self._genero = genero
@@ -84,17 +84,17 @@ class Videojuegos():
     def entregados(self):
         self._entregado = True
 
-serie1 = Series("El Juego", 3, "Terror", "A.M")
-serie2 = Series("En busca de eso", 1, "Drama", "J.M")
-serie3 = Series("La vida", 2, "Drama", "P.M")
-serie4 = Series("Si o no", 1, "Accion", "A.M")
-serie5 = Series("El", 3, "Drama", "L.M")
+serie1 = Series("Brooklyn 99", 7, "Comedia", "Netflix")
+serie2 = Series("Doctor Who", 11, "Aventura", "BBC")
+serie3 = Series("La casa de papel", 6, "Accion", "Netflix")
+serie4 = Series("Malviviendo", 3, "Drama", "Entertainment")
+serie5 = Series("Padre de familia", 8, "Comedia", "Fuzzy Door")
 
-videogame1 = Videojuegos("Dark Soul", 40, "Accion", "From Software")
-videogame2 = Videojuegos("Dark Soul II", 30, "Accion", "From Software")
-videogame3 = Videojuegos("Dark Soul III", 50, "Accion", "From Software")
-videogame4 = Videojuegos("League of Legend", 80, "Accion", "Riot Games")
-videogame5 = Videojuegos("Hollow Kigth", 20, "Accion", "A")
+videogame1 = Videojuegos("The Elder Scrolls: Arena", 100, "Accion", "Bethesda")
+videogame2 = Videojuegos("The Elder Scrolls II: Daggerfall", 100, "Accion", "Bethesda")
+videogame3 = Videojuegos("The Elder Scrolls III: Morrowind", 150, "Accion", "Bethesda")
+videogame4 = Videojuegos("The Elder Scrolls IV: Oblivion", 200, "Accion", "Bethesda")
+videogame5 = Videojuegos("The Elder Scrolls V: Skyrim", 300, "Accion", "Bethesda")
 
 series = {serie5, serie4, serie3, serie2, serie1}
 videojuegos = {videogame5, videogame4, videogame3, videogame2, videogame1}
@@ -131,6 +131,5 @@ for i in videojuegos:
         nombreVideojuego = i.get_titulo()
         mayorHoras = i.get_horasEstimadas()
 
-print("")
-print("La serie con mas temporadas es " +nombreSerie + " con un numero de " +str(mayorTemporadas))
-print("El videojuego con mas horas es " +nombreVideojuego + " con un numero de " +str(mayorHoras))
+print("La serie con mas temporadas es " +nombreSerie + " con " +str(mayorTemporadas) + " temporadas")
+print("El videojuego con mas horas es " +nombreVideojuego + " con " +str(mayorHoras) + " horas de duracion.")

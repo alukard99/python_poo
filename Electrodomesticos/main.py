@@ -30,7 +30,6 @@ class Electrodomesticos():
             self._cEnergetico = 'F'
 
     def preciofinal(self):
-        """Esta es la parte en la que se suman dependiendo de su consmo de energia"""
         if(self._cEnergetico == 'A'):
             self._precio = self._precio + 100
         if (self._cEnergetico == 'B'):
@@ -118,11 +117,6 @@ for i in array:
     if(type(i) == Television):
         totalTelevision = totalTelevision + i.get_precio()
 
-
-
-print("-------PRECIO TOTAL ELECTRODOMESTICOS------")
-print(totalElectro)
-print("-------PRECIO TOTAL LAVADORAS------")
-print(totalLavadora)
-print("-------PRECIO TOTAL TELEVISIONES------")
-print(totalTelevision)
+print("Precio total: " + str(totalElectro))
+print("Precio lavadora: " + str(totalLavadora))
+print("Precio lavadora: " + str(totalTelevision))
